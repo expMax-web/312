@@ -15,6 +15,8 @@ Push-уведомление и Notification — это две отдельные
 2. Вызов API из вашей серверной части/приложения, который отправляет push-уведомление на устройство пользователя.
 3. Файл service worker'а, который получит событие «push», когда push-уведомление поступит на устройство.
 
+![Более подробная схема](https://pushpad.xyz/assets/web_push_sequence_diagram-126e9c554725391202b650ca369c5e1860e6200096fdc7f18718255d924610e4.png)
+
 **Шаг 1: Клиентская часть**
 Необходимо получить разрешение от пользователя на отправку ему push-уведомление, для этого вызываем метод `Notification.requestPermission()` , для сафари - `window.safari.pushNotification.requestPermission()`
 
@@ -81,12 +83,13 @@ self.addEventListener('push', function(e) {
 })
 ```
 
-## Что такое Web Push Protocol? (в разработке)
+## Что такое Web Push Protocol?
 Это стандарт IETF, который определяет, как вы выполняете вызов API к службе push-уведомлений. 
 
 Когда мы подписываем пользователя, мы передаем applicationServerKey. Этот ключ передается службе push-уведомлений и используется для проверки того, что приложение, подписавшееся на пользователя, также является приложением, которое запускает push-сообщения.
 
-Данные, которые вы отправляете с push-сообщением, должны быть зашифрованы, чтобы службы push-уведомлений не могли их просмотреть.
+Данные, которые вы отправляете с push-сообщением, должны быть зашифрованы, чтобы службы push-уведомлений не могли их просмотреть. Шифрование полезной нагрузки осуществляется с помощью данных, которые были получены от браузера в объекте PushSubscription. Подробнее можно почитать [тут](https://web.dev/articles/push-notifications-web-push-protocol?hl=ru#inputs).
+
 
 ## Что такое GCM?
 При поиске туториалов или справочной информации о push-уведомлениях и Notifications, попадаются источники про GCM, которые сбивают с толку, особенно в самом начале изучения данной темы. Дело в том, что Chrome впервые реализовал веб-push в декабре 2014 года, Chrome использовал Google Cloud Messaging (GCM) для отправки push-сообщений с сервера в браузер. Это не был "настоящий" Web Push.
@@ -161,3 +164,4 @@ Android отправляет через службу push-уведомлений
 - [Web Dev Notifications](https://web.dev/explore/notifications?hl=ru)
 - [Apple Developer PushNotifications](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/NotificationProgrammingGuideForWebsites/PushNotifications/PushNotifications.html)
 - [Mobile Push Notifications](https://tracker.my.com/blog/222/podrobnij-gajd-po-mobilnim-push-uvedomleniyam?lang=ru)
+- [Sending web push notifications in Safari](https://developer.apple.com/documentation/UserNotifications/sending-web-push-notifications-in-web-apps-and-browsers)
