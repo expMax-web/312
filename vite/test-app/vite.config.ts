@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
       
       https://vitejs.dev/config/shared-options.html#assetsinclude
   */
-  assetsInclude: [],
+  //   assetsInclude: [],
 
   /*
       Base public path для приложения, добавляется после port через /
@@ -54,7 +54,7 @@ export default defineConfig(({ mode }) => ({
 
       https://vitejs.dev/config/shared-options.html#envdir
   */
-  envDir: "",
+  //   envDir: "",
 
   /*
       Префикс для переменных окружения
@@ -146,7 +146,7 @@ export default defineConfig(({ mode }) => ({
         Нужен действительный secure сертификат 
         https://vitejs.dev/config/server-options.html#server-https
     */
-    https: {},
+    // https: {},
 
     /*
         Автоматически открывает браузер при запуске сервера
@@ -173,7 +173,7 @@ export default defineConfig(({ mode }) => ({
         
         https://vitejs.dev/config/server-options.html#server-proxy 
     */
-    proxy: undefined,
+    // proxy: {},
 
     /*
         CORS для dev сервера
@@ -193,7 +193,7 @@ export default defineConfig(({ mode }) => ({
         
         https://v3.vitejs.ru/config/server-options.html#server-headers
     */
-    headers: undefined,
+    // headers: {},
 
     /*
         HMR 
@@ -213,7 +213,7 @@ export default defineConfig(({ mode }) => ({
 
         string - относительный от root путь до файла.
 
-        Напирмер 
+        Например 
 
         {
           clientFiles: ['./src/components/*.vue', './src/utils/big-utils.js'],
@@ -222,7 +222,7 @@ export default defineConfig(({ mode }) => ({
 
         https://vitejs.dev/config/server-options.html#server-warmup
     */
-    warmup: { clientFiles: [], ssrFiles: [] },
+    // warmup: { clientFiles: [], ssrFiles: [] },
 
     /*
         Для настройки просматриваемых файлов при HMR.
@@ -234,7 +234,7 @@ export default defineConfig(({ mode }) => ({
 
         https://vitejs.dev/config/server-options.html#server-watch   
     */
-    watch: undefined,
+    // watch: {},
 
     /*
         Создает сервер Vite в режиме мидлвара. 
@@ -243,7 +243,7 @@ export default defineConfig(({ mode }) => ({
       
         https://vitejs.dev/config/server-options.html#server-middlewaremode
      */
-    middlewareMode: false,
+    // middlewareMode: false,
 
     fs: {
       /*
